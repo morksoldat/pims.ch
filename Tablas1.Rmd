@@ -1,0 +1,84 @@
+---
+title: "Tablas"
+geometry: left=2cm,right=2cm,top=2cm,bottom=2cm
+output:
+  pdf_document:
+    toc: yes
+  html_notebook: default
+  word_document: default
+  html_document:
+    df_print: paged
+    toc: yes
+documentclass: article
+---
+```{r global_options, include = FALSE}
+source("ProyectoCOVIDPediatr_R_2020-06-27_2333.r")
+source("Datos google.R")
+source("Tablas.R")
+library(kableExtra)
+library(flextable)
+```
+# Tablas generales.
+
+## Tabla 1: Demograficos y comorbilidad
+
+```{r echo=FALSE}
+kableone(print(tabla1.1, varLabels =T, cramVars = "genero.factor", dropEqual = T))
+```
+
+## Tabla 2: Síntomas
+
+```{r echo=FALSE}
+kableone(print(tabla2.1, varLabels =T))
+```
+
+## Tabla 3: Signos vitales al ingreso
+
+```{r echo=FALSE}
+kableone(print(tabla3.1, varLabels =T, nonnormal = vars3n))
+```
+
+## Tabla 4: Laboratorio al ingreso
+```{r echo=FALSE}
+kableone(print(tabla4.1, varLabels =T, nonnormal = vars4))
+```
+
+## Tabla 5: Laboratorio al ingreso
+```{r echo=FALSE}
+kableone(print(tabla6.1, varLabels =T, nonnormal = vars6))
+```
+
+## Tabla 6: Síntomas PIMS
+```{r echo=FALSE}
+kableone(tabla5)
+```
+
+# Tablas UCI vs Sala
+
+## Tabla 1: Demograficos y comorbilidad
+
+```{r echo=FALSE}
+kableone(print(tabla1, varLabels =T, cramVars = "genero.factor", dropEqual = T)) 
+```
+
+## Tabla 2: Síntomas
+
+```{r echo=FALSE}
+kableone(print(tabla2, varLabels =T))
+```
+
+## Tabla 3: Signos vitales al ingreso
+
+```{r echo=FALSE}
+kableone(print(tabla3, varLabels =T, nonnormal = vars3n))
+```
+
+## Tabla 4: Laboratorio al ingreso
+```{r echo=FALSE}
+kableone(print(tabla4, varLabels =T, nonnormal = vars4))
+```
+
+## Tabla 5: Laboratorio al ingreso
+```{r echo=FALSE}
+kableone(print(tabla6, varLabels =T, nonnormal = vars6))
+```
